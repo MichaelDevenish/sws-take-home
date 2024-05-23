@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test the graphql api It should complain if no query string is provided 1`] = `
+{
+  "errors": [
+    {
+      "extensions": {
+        "code": "BAD_REQUEST",
+      },
+      "message": "POST body missing, invalid Content-Type, or JSON object has no keys.",
+    },
+  ],
+}
+`;
+
+exports[`Test the graphql api It should respond to a simple post 1`] = `
+{
+  "data": {
+    "test": "Hello world",
+  },
+}
+`;
