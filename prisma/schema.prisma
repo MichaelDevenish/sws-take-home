@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model swsCompany {
+  id                         String                      @id
+  name                       String
+  tickerSymbol               String?                     @map("ticker_symbol")
+  exchangeSymbol             String?                     @map("exchange_symbol")
+  uniqueSymbol               String?                     @map("unique_symbol")
+  dateGenerated              String?                   @map("date_generated")
+  securityName               String?                     @map("security_name")
+  exchangeCountryIso         String?                     @map("exchange_country_iso")
+  listingCurrencyIso         String?                     @map("listing_currency_iso")
+  canonicalUrl               String?                     @map("canonical_url")
+  uniqueSymbolSlug           String?                     @map("unique_symbol_slug")
+  scoreId                    Int?                        @map("score_id")
+  swsCompanyPriceClose       swsCompanyPriceClose[]
+  swsCompanyScore            swsCompanyScore[]
+}
+
+model swsCompanyPriceClose {
+  date            String
+  company_id      String
+  price           Float
+  date_created    DateTime       @default(dbgenerated("CURRENT_TIMESTAMP"))
+  swsCompany      swsCompany     @relation(fields: [company_id], references: [id])
+
+  @@id([date, company_id])
+}
+
+model swsCompanyScore {
+  id                    String    @id
+  company_id            String
+  date_generated        String
+  dividend              Int
+  future                Int
+  health                Int
+  management            Int
+  past                  Int
+  value                 Int
+  misc                  Int
+  total                 Int
+  sentence              String?
+  swsCompany            swsCompany @relation(fields: [company_id], references: [id])
+}

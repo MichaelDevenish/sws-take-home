@@ -8,8 +8,9 @@ import cors from 'cors'
 
 const app = express()
 
+import {prisma} from "./database";
+
 // todo setup base code structure
-// todo setup prisma
 const typeDefs = gql`
   type Query {
     test: String
@@ -17,7 +18,8 @@ const typeDefs = gql`
 `;
 const resolvers = {
     Query: {
-        test() {
+        test: async () => {
+           console.log( await prisma.swsCompany.findMany())
             return 'Hello world';
         },
     },
@@ -33,7 +35,6 @@ async function startServer() {
     app.use('/graphql', expressMiddleware(server))
 }
 startServer();
-
 
 app.listen(3000, function () {
     console.log('graphql app listening on port 3000!');
