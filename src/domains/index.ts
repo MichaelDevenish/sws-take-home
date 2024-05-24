@@ -1,12 +1,12 @@
-import {campaignResolvers, campaignTypeDefs } from "./campaign"
+import {companyResolvers, companyTypeDefs } from "./company"
 
 
 const typeDefs = [
-    campaignTypeDefs
+    companyTypeDefs
 ]
 
 const resolvers = [
-    campaignResolvers
+    companyResolvers
 ]
 
 export {

@@ -1,12 +1,12 @@
 import gql from "graphql-tag";
 
 const typeDefs = gql`
-  type Campaign {
+  type Company {
     id: ID!
   }
 
   type Query {
-    listCampaigns: [Campaign]
+    listCompanies: [Company]
   }
 `;
 

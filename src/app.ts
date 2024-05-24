@@ -18,11 +18,8 @@ async function startServer() {
     await server.start()
     app.use('/graphql', expressMiddleware(server))
 }
-startServer();
 
-app.listen(3000, function () {
-    console.log('graphql app listening on port 3000!');
-});
+startServer();
 
 export {
     app

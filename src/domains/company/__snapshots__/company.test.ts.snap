@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test the company api It should list companies 1`] = `
+{
+  "data": {
+    "listCompanies": [
+      {
+        "id": "46B285BC-B25F-4814-985C-390A4BFA2023",
+      },
+      {
+        "id": "4BE2C01F-F390-479C-A166-8E0DD73CF7B9",
+      },
+      {
+        "id": "FC7B296B-300B-4710-8F84-D68A5BFBC75B",
+      },
+      {
+        "id": "743F0744-8987-4339-B565-DEE3A93E9934",
+      },
+      {
+        "id": "D0665877-9EC5-4568-8A29-E8FFF77DF072",
+      },
+      {
+        "id": "8ACBC59A-0EC5-42D1-9F7B-6D31ABD4421E",
+      },
+      {
+        "id": "424EB65E-8C34-42BF-A107-61F93D4E9E6D",
+      },
+      {
+        "id": "65DCE5EA-70D6-417F-9CAC-1EAA92FB7F1C",
+      },
+      {
+        "id": "C8250615-877A-4AE1-BEF3-636B69CD83E8",
+      },
+      {
+        "id": "49A0E7C9-F918-4E97-AECA-D8D37F9A3F4F",
+      },
+      {
+        "id": "A0A1A293-FDA8-48DF-9EBF-35556CDE3235",
+      },
+      {
+        "id": "3B07801A-1C3A-46E6-A7FF-E1F59F31C466",
+      },
+    ],
+  },
+}
+`;
