@@ -3,9 +3,16 @@ import request from "supertest";
 
 describe("Test the graphql api", () => {
     test("It should respond to a simple post", async () => {
+        const query =  `
+            query test {
+              listCampaigns {
+                 id
+              }
+            }
+        `
         const response = await request(app)
             .post("/graphql")
-            .send({query: `query test {  test }`})
+            .send({query })
             .set('Accept', 'application/json')
             .set('Content-Type', 'application/json')
 

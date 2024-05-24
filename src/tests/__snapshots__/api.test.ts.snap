@@ -16,7 +16,11 @@ exports[`Test the graphql api It should complain if no query string is provided 
 exports[`Test the graphql api It should respond to a simple post 1`] = `
 {
   "data": {
-    "test": "Hello world",
+    "listCampaigns": [
+      {
+        "id": "test",
+      },
+    ],
   },
 }
 `;

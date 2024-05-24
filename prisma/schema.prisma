@@ -7,7 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model swsCompany {
+model Company {
   id                         String                      @id
   name                       String
   tickerSymbol               String?                     @map("ticker_symbol")
@@ -20,21 +20,25 @@ model swsCompany {
   canonicalUrl               String?                     @map("canonical_url")
   uniqueSymbolSlug           String?                     @map("unique_symbol_slug")
   scoreId                    Int?                        @map("score_id")
-  swsCompanyPriceClose       swsCompanyPriceClose[]
-  swsCompanyScore            swsCompanyScore[]
+  swsCompanyPriceClose       CompanyPriceClose[]
+  swsCompanyScore            CompanyScore[]
+
+  @@map("swsCompany")
 }
 
-model swsCompanyPriceClose {
+model CompanyPriceClose {
   date            String
   company_id      String
   price           Float
   date_created    DateTime       @default(dbgenerated("CURRENT_TIMESTAMP"))
-  swsCompany      swsCompany     @relation(fields: [company_id], references: [id])
+  swsCompany      Company        @relation(fields: [company_id], references: [id])
 
   @@id([date, company_id])
+
+  @@map("swsCompanyPriceClose")
 }
 
-model swsCompanyScore {
+model CompanyScore {
   id                    String    @id
   company_id            String
   date_generated        String
@@ -47,5 +51,7 @@ model swsCompanyScore {
   misc                  Int
   total                 Int
   sentence              String?
-  swsCompany            swsCompany @relation(fields: [company_id], references: [id])
+  swsCompany            Company   @relation(fields: [company_id], references: [id])
+
+  @@map("swsCompanyScore")
 }
