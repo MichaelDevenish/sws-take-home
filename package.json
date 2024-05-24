@@ -4,8 +4,8 @@
   "description": "Take home task for simply wall street",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf ./build && tsc",
-    "start:dev": "npx nodemon",
+    "build": "rimraf ./build && npx prisma generate && tsc",
+    "start:dev": "concurrently --kill-others \"npx prisma generate --watch\" \" npx nodemon\"",
     "start": "npm run build && node build/index.js",
     "test": "env-cmd -f tests/.env.test jest"
   },
@@ -17,8 +17,10 @@
     "@types/jest": "^29.5.12",
     "@types/node": "^20.12.12",
     "@types/supertest": "^6.0.2",
+    "concurrently": "^8.2.2",
     "env-cmd": "^10.1.0",
     "jest": "^29.7.0",
+    "jest-mock-extended": "^3.0.7",
     "nodemon": "^3.1.0",
     "prisma": "^5.14.0",
     "rimraf": "^5.0.7",

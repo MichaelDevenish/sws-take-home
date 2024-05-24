@@ -14,10 +14,15 @@ const typeDefs = gql`
     canonicalUrl: String
     uniqueSymbolSlug: String
     scoreId: Int
+    
+    companyScore: CompanyScore
+    companyPriceClose: CompanyPriceClose
+    companyPriceCloses: [CompanyPriceClose]
   }
 
   type Query {
     listCompanies: [Company]
+    getCompany (companyId: ID!): Company
   }
 `;
 

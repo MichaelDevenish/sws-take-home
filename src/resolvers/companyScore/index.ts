@@ -1,0 +1,1 @@
+export { typeDefs as companyScoreTypeDefs } from './typeDefs'

@@ -19,29 +19,29 @@ model Company {
   listingCurrencyIso         String?                     @map("listing_currency_iso")
   canonicalUrl               String?                     @map("canonical_url")
   uniqueSymbolSlug           String?                     @map("unique_symbol_slug")
-  scoreId                    Int?                        @map("score_id")
-  swsCompanyPriceClose       CompanyPriceClose[]
-  swsCompanyScore            CompanyScore[]
+  scoreId                    Int?                        @map("score_id") @unique()
+  companyPriceClose          CompanyPriceClose[]
+  companyScore               CompanyScore?               @relation(fields: [scoreId], references: [id])
 
   @@map("swsCompany")
 }
 
 model CompanyPriceClose {
   date            String
-  company_id      String
+  companyId       String         @map("company_id")
   price           Float
-  date_created    DateTime       @default(dbgenerated("CURRENT_TIMESTAMP"))
-  swsCompany      Company        @relation(fields: [company_id], references: [id])
+  dateCreated     String         @map("date_created") @default(dbgenerated("CURRENT_TIMESTAMP"))
+  company         Company        @relation(fields: [companyId], references: [id])
 
-  @@id([date, company_id])
+  @@id([date, companyId])
 
   @@map("swsCompanyPriceClose")
 }
 
 model CompanyScore {
-  id                    String    @id
-  company_id            String
-  date_generated        String
+  id                    Int      @id
+  companyId             String   @map("company_id")
+  dateGenerated         String   @map("date_generated")
   dividend              Int
   future                Int
   health                Int
@@ -51,7 +51,7 @@ model CompanyScore {
   misc                  Int
   total                 Int
   sentence              String?
-  swsCompany            Company   @relation(fields: [company_id], references: [id])
+  company               Company?
 
   @@map("swsCompanyScore")
 }

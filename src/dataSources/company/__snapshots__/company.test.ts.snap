@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test the company datasource It should get a company 1`] = `
+{
+  "canonicalUrl": null,
+  "dateGenerated": null,
+  "exchangeCountryIso": null,
+  "exchangeSymbol": null,
+  "id": "test1",
+  "listingCurrencyIso": null,
+  "name": "test1",
+  "scoreId": null,
+  "securityName": null,
+  "tickerSymbol": null,
+  "uniqueSymbol": null,
+  "uniqueSymbolSlug": null,
+}
+`;
+
+exports[`Test the company datasource It should get a company score 1`] = `
+{
+  "companyId": "test1",
+  "dateGenerated": "",
+  "dividend": 0,
+  "future": 0,
+  "health": 0,
+  "id": 0,
+  "management": 0,
+  "misc": 0,
+  "past": 0,
+  "sentence": null,
+  "total": 0,
+  "value": 0,
+}
+`;
+
+exports[`Test the company datasource It should get the all company close prices 1`] = `
+[
+  {
+    "companyId": "",
+    "date": "",
+    "dateCreated": "",
+    "price": 0,
+  },
+  {
+    "companyId": "",
+    "date": "",
+    "dateCreated": "",
+    "price": 0,
+  },
+]
+`;
+
+exports[`Test the company datasource It should get the most recent company close price 1`] = `
+{
+  "companyId": "",
+  "date": "",
+  "dateCreated": "",
+  "price": 0,
+}
+`;
+
+exports[`Test the company datasource It should list companies 1`] = `
+[
+  {
+    "canonicalUrl": null,
+    "dateGenerated": null,
+    "exchangeCountryIso": null,
+    "exchangeSymbol": null,
+    "id": "test1",
+    "listingCurrencyIso": null,
+    "name": "test1",
+    "scoreId": null,
+    "securityName": null,
+    "tickerSymbol": null,
+    "uniqueSymbol": null,
+    "uniqueSymbolSlug": null,
+  },
+  {
+    "canonicalUrl": null,
+    "dateGenerated": null,
+    "exchangeCountryIso": null,
+    "exchangeSymbol": null,
+    "id": "test2",
+    "listingCurrencyIso": null,
+    "name": "test2",
+    "scoreId": null,
+    "securityName": null,
+    "tickerSymbol": null,
+    "uniqueSymbol": null,
+    "uniqueSymbolSlug": null,
+  },
+]
+`;
