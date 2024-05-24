@@ -1,5 +1,5 @@
 import {dataSources} from "./dataSources";
 
 export type Context = {
-    dataSources: ReturnType<typeof  dataSources>
+    dataSources: ReturnType<typeof dataSources>
 }

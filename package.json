@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf ./build && npm run prisma:generate && tsc",
-    "start:dev": "concurrently --kill-others \"npm run prisma:generate --watch\" \" npx nodemon\"",
+    "start:dev": "concurrently --kill-others \"npx prisma generate --watch\" \" npx nodemon\"",
     "start": "npm run build && node build/index.js",
     "prisma:generate": "npx prisma generate",
     "test": "env-cmd -f tests/.env.test jest"

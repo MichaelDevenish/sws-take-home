@@ -17,10 +17,10 @@ type Company = {
 
 const resolvers = {
     Query: {
-        listCompanies: async (_parent: void, _args: void, context: Context) => {
+        listCompanies: (_parent: void, _args: void, context: Context) => {
             return context.dataSources.company.getCompanies()
         },
-        getCompany: async (_parent: void, args: { companyId: string }, context: Context) => {
+        getCompany: (_parent: void, args: { companyId: string }, context: Context) => {
             return context.dataSources.company.getCompany(args.companyId)
         },
     },
@@ -28,10 +28,10 @@ const resolvers = {
         companyScore: (parent: Company, _args: void, context: Context) => {
             return context.dataSources.company.getCompanyScore(parent.id)
         },
-        companyPriceClose:async (parent: Company, _args: void, context: Context) => {
+        companyPriceClose: (parent: Company, _args: void, context: Context) => {
             return context.dataSources.company.getCompanyPriceClose(parent.id)
         },
-        companyPriceCloses:async (parent: Company, _args: void, context: Context) => {
+        companyPriceCloses: (parent: Company, _args: void, context: Context) => {
             return context.dataSources.company.companyPriceCloses(parent.id)
         }
     }

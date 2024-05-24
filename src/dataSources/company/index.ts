@@ -29,12 +29,14 @@ export class Company {
          *  query per call of this function. Therefore, solving the graphql n+1 problem.
          *  https://www.prisma.io/docs/orm/prisma-client/queries/query-optimization-performance
          */
-        return (await this._prisma.company
+        const firstPriceCloseArray = await this._prisma.company
             .findUnique({where: { id: companyId }})
             .companyPriceClose({
                 orderBy: { date: 'desc' },
                 take: 1
-            }))?.[0]
+            })
+
+        return firstPriceCloseArray?.[0]
     }
 
     public companyPriceCloses (companyId: string) {
