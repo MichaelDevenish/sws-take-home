@@ -13,7 +13,7 @@ model Company {
   tickerSymbol               String?                     @map("ticker_symbol")
   exchangeSymbol             String?                     @map("exchange_symbol")
   uniqueSymbol               String?                     @map("unique_symbol")
-  dateGenerated              String?                   @map("date_generated")
+  dateGenerated              String?                     @map("date_generated")
   securityName               String?                     @map("security_name")
   exchangeCountryIso         String?                     @map("exchange_country_iso")
   listingCurrencyIso         String?                     @map("listing_currency_iso")
