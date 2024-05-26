@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Test the company api It should be able to fetch a company with NO relations 1`] = `
+{
+  "data": {
+    "getCompany": {
+      "canonicalUrl": "/stocks/us/automobiles/nasdaq-tsla/tesla",
+      "companyPriceClose": null,
+      "companyPriceCloses": [],
+      "companyScore": null,
+      "dateGenerated": "2020-05-23 08:32:49.000000",
+      "exchangeCountryIso": "US",
+      "exchangeSymbol": "NasdaqGS",
+      "id": "65DCE5EA-70D6-417F-9CAC-1EAA92FB7F1C",
+      "listingCurrencyIso": "USD",
+      "name": "Tesla",
+      "scoreId": 18906,
+      "securityName": "Common Stock",
+      "tickerSymbol": "TSLA",
+      "uniqueSymbol": "NasdaqGS:TSLA",
+      "uniqueSymbolSlug": "nasdaq-tsla",
+    },
+  },
+}
+`;
+
 exports[`Test the company api It should be able to fetch a company with all relations 1`] = `
 {
   "data": {
